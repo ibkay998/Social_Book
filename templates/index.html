@@ -170,10 +170,12 @@
 
                         <a href="#">
                             <img src="{{user_profile.profile_img.url}}" class="header-avatar" alt="">
+                            <p>{{user_profile.user.username}}</p>
                         </a>
                         <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                             <ul>
                                 <li><a href="/settings"> Account setting </a> </li>
+                                <li><a href="/profile/{{user_profile.user.username}}"> Profile </a> </li>
                                 <li><a href="explore.html">explore </a> </li>
                                 <li><a href="#"> Help </a> </li>
                                 <li><a href="/logout"> Log Out</a></li>
@@ -201,7 +203,7 @@
                             <div class="flex justify-between items-center px-4 py-3">
                                 <div class="flex flex-1 items-center space-x-4">
                                 
-                                    <a href="profile/{{post.user}}" class="block capitalize font-semibold ">@{{post.user}} </a>
+                                    <a href="profile/{{post.user}}" class="block capitalize font-semibold ">@{{post.user}}</a>
                                 </div>
                               <div>
                                 <a href="#"> <i class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 "></i> </a>
@@ -241,12 +243,17 @@
                                 </div>
                               </div>
                             </div>
-    
+                            
+                            {% if post.image.url != None %}
                             <div uk-lightbox>
+                                
                                 <a href="{{post.image.url}}">  
                                     <img src="{{post.image.url}}" alt="">
                                 </a>
+                                
+
                             </div>
+                            {% endif %}
                             
     
                             <div class="py-3 px-4 space-y-3"> 
