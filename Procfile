@@ -1,1 +1,1 @@
-web: gunicorn piSurv.wsgi --log-file -
+web: gunicorn socialBook.wsgi --log-file -
