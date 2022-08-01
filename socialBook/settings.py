@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'core',
 ]
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
